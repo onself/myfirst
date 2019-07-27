@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>czjf_system</display-name>
+  <welcome-file-list>
+    <welcome-file>/site/index.jsp</welcome-file><!-- 配置系统的首页 -->
+  </welcome-file-list>
+ 
+ <filter>
+   <filter-name>EncodingFilter</filter-name>
+   <filter-class>cn.itcast.web.filter.EncodingFilter</filter-class>
+ </filter>
+ <filter-mapping>
+   <filter-name>EncodingFilter</filter-name>
+   <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ 
+ 
+  <filter>
+   <filter-name>TeacherFilter</filter-name>
+   <filter-class>cn.itcast.web.filter.TeacherFilter</filter-class>
+ </filter>
+ <filter-mapping>
+   <filter-name>TeacherFilter</filter-name>
+   <url-pattern>/atea/*</url-pattern>
+ </filter-mapping>
+ 
+ 
+ <filter>
+   <filter-name>AdminFilter</filter-name>
+   <filter-class>cn.itcast.web.filter.AdminFilter</filter-class>
+ </filter>
+ <filter-mapping>
+   <filter-name>AdminFilter</filter-name>
+   <url-pattern>/admin/*</url-pattern>
+ </filter-mapping>
+ 
+ 
+  <servlet>
+    <servlet-name>StuServlet</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.StuServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>VideoServlet</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.VideoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MessageServlet</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.MessageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.AdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TeachServlet</servlet-name>
+    <servlet-class>cn.itcast.web.servlet.TeachServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>StuServlet</servlet-name>
+    <url-pattern>/StuServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VideoServlet</servlet-name>
+    <url-pattern>/VideoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MessageServlet</servlet-name>
+    <url-pattern>/MessageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/AdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeachServlet</servlet-name>
+    <url-pattern>/TeachServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
